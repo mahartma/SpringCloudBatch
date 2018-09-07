@@ -5,6 +5,7 @@ import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
+import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +37,9 @@ public class BatchApp {
     @Bean
     public Job testJob() {
         return jobBuilderFactory.get("testJob")
-                .start(testStep()).build();
+                .start(testStep())
+                .incrementer(new RunIdIncrementer())
+                .build();
     }
 
     @Bean

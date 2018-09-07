@@ -6,7 +6,7 @@
 
     <groupId>de.codecentric.workshop</groupId>
     <artifactId>Spring-Cloud-Batch-Sample</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
